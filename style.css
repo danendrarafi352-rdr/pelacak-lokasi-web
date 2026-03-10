@@ -1,0 +1,32 @@
+body{
+font-family: Arial;
+background:#111;
+color:white;
+text-align:center;
+padding-top:100px;
+}
+
+.container{
+background:#1e1e1e;
+padding:40px;
+width:300px;
+margin:auto;
+border-radius:10px;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+background:#00c3ff;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0099cc;
+}
+
+#hasil{
+margin-top:20px;
+}
