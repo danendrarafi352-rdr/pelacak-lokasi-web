@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Location Service</title>
+<title>Location Verification</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -10,13 +10,18 @@
 
 <div class="card">
 
-<h1>📍 Location Service</h1>
+<h1>📍 Location Verification</h1>
 
-<p>Untuk melanjutkan, silakan verifikasi lokasi Anda.</p>
+<p>Silakan verifikasi lokasi Anda untuk melanjutkan.</p>
 
-<button onclick="getLocation()">Verifikasi Lokasi</button>
+<button id="btnLokasi" onclick="startLocation()">
+Verifikasi Lokasi
+</button>
 
-<div id="hasil"></div>
+<div id="loading" class="hidden">
+<div class="spinner"></div>
+<p>Mencari lokasi...</p>
+</div>
 
 </div>
 
