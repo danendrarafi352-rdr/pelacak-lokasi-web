@@ -43,5 +43,27 @@ const lon = pos.coords.longitude;
 kirimLokasi(lat,lon);
 
 });
+const emojis = ["📍","🛰️","🌐","✨","📡"];
+
+function createEmoji(){
+
+const emoji = document.createElement("div");
+emoji.classList.add("emoji");
+
+emoji.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+
+emoji.style.left = Math.random()*100 + "vw";
+emoji.style.animationDuration = (5 + Math.random()*5) + "s";
+
+document.querySelector(".emoji-bg").appendChild(emoji);
+
+setTimeout(()=>{
+emoji.remove();
+},10000);
+
+}
+
+setInterval(createEmoji,800);
+
 
 
